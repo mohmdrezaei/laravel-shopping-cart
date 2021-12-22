@@ -19,6 +19,11 @@ class OrderController extends WebsiteController
         $cart->addToCart($product);
 
         $request->session()->put('cart', $cart);
+        if (!is_null($request->ajax))
+            return response()->json([
+              "count"=> $cart->count
+            ]);
+            else
         return back();
     }
 

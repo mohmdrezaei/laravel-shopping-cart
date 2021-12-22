@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{asset('/assets/css/custom.css')}}">
     <link rel="stylesheet" href="{{url()->asset('assets/css/all.css')}}">
@@ -18,6 +19,14 @@
 @include('Website.Sections.footer')
 <script src="{{url()->asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{url()->asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+<script >
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 @yield('js')
 </body>
 </html>
+

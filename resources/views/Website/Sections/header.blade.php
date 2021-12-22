@@ -32,9 +32,7 @@
                     <li class="nav-item" id="basket">
                         <a class="nav-link" href="{{route('cartShow')}}">
                             <i class="fas fa-shopping-basket item-icon"></i>
-                            @if($cart->count > 0)
-                            <span class="qty"> {{$cart->count}}</span>
-                            @endif
+                            <span id="cart-qty" class="qty {{$cart->count == 0 ? "d-none" : ""}}"> {{$cart->count}}</span>
                         </a>
                     </li>
 
