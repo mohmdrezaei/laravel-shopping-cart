@@ -1,0 +1,29 @@
+@import "bootstrap.min.css";
+@import "fonts";
+
+html, body {
+    background-color: #f0f0f0;
+}
+a{
+    text-decoration: none;
+}
+.card-custom-1{
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid rgba(#000,.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.table-img{
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+.img-edit{
+    width: 250px;
+    height: auto;
+    margin-top: 14px;
+}
+

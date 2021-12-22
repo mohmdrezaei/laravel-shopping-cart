@@ -1,0 +1,98 @@
+@import "bootstrap.min.css";
+@import "fonts";
+
+html, body {
+    background-color: #f0f0f0;
+}
+a{
+    text-decoration: none;
+}
+
+#basket {
+    position: relative;
+
+    .item-icon {
+        position: relative;
+        z-index: 5;
+    }
+
+    .qty {
+        position: absolute;
+        top: 8px;
+        right: 0;
+        background-color: #ab1616;
+        color: #ffffff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+        display: block;
+    }
+}
+
+.title {
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer {
+    padding-top: 15px;
+    border-top: 1px solid rgba(#000, .1);
+}
+.content{
+    font-size: 20px;
+
+}
+.cart-back{
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title-custom{
+    font-size: 25px;
+    border-bottom: 3px solid #dedede;
+
+}
+.card-custom-reg{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.btn-reg{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.eye{
+    position: absolute;
+   top: 43px;
+    left: 290px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.person-add{
+    position: relative;
+    top: 4px;
+    color: #0d95b4;
+
+}
+.btn-shadow{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-custom-3{
+    padding: 12px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(#000,.15);
+}
+.cart-table{
+img{
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    margin-left: 2px;
+}
+}
+
+
