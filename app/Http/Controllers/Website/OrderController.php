@@ -21,10 +21,10 @@ class OrderController extends WebsiteController
         $request->session()->put('cart', $cart);
         if (!is_null($request->ajax))
             return response()->json([
-              "count"=> $cart->count
+                "count" => $cart->count
             ]);
-            else
-        return back();
+        else
+            return back();
     }
 
     public function removeFromCart(Product $product, Request $request)
@@ -34,7 +34,16 @@ class OrderController extends WebsiteController
         $cart->removeFromCart($product);
 
         $request->session()->put('cart', $cart);
-        return back();
+        if (!is_null($request->ajax)) {
+            return response()->json([
+
+                "count" => $cart->count,
+                "price" => $cart->price
+            ]);
+
+        } else {
+            return back();
+        }
     }
 
     public function updateCart(Product $product, Request $request)
@@ -44,6 +53,7 @@ class OrderController extends WebsiteController
         $cart->updateCart($product, $request->count);
 
         $request->session()->put('cart', $cart);
+
         return back();
     }
 
@@ -117,10 +127,10 @@ class OrderController extends WebsiteController
             $receipt = Payment::amount($order->price)->transactionId($transaction_id)->verify();
             $order->update([
                 'ref_id' => $receipt->getReferenceId(),
-                'status'=>'payed'
+                'status' => 'payed'
             ]);
 
-                $request->session()->remove('cart');
+            $request->session()->remove('cart');
             dd('merc k kharid kardi');
 
         } catch (InvalidPaymentException $exception) {
